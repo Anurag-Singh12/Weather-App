@@ -8,6 +8,9 @@
 body {
   background: linear-gradient(335deg, #283a4e, #3b4b87);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .maincard {
@@ -15,9 +18,9 @@ body {
   max-width: 342px;
   background: linear-gradient(2deg, #3a8defd9, #df5151);
   color: white;
-  margin: 100px auto 0; /*top,left-right,bottom*/
+  /* margin: 100px auto 0; top,left-right,bottom */
   border-radius: 20px;
-  padding: 30px 20px; /*top-bottom,left-right*/
+  padding: 25px 18px; /*top-bottom,left-right*/
   text-align: center;
 }
 
