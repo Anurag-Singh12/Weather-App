@@ -1,11 +1,10 @@
-const apikey = "fa8d35944553b4fec3ec3403dd661080";
 const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q="; //results in metric units (Celsius)
 const searchbox = document.querySelector('.searchbox input'); //<input> element inside the element with class .searchbox
 const searchbtn = document.querySelector('.searchbox button');
 const weathericon = document.querySelector('.weather-icon'); //src can be updated dynamically using API
 
 async function checkweather(city) {
-    const response = await fetch(apiurl + city + `&appid=${apikey}`); //builds the full URL
+    const response = await fetch(apiurl + city + `&appid=${CONFIG.API_KEY}`); //builds the full URL
     var data = await response.json(); //response of api will store in store the parsed result converting it from JSON text into a JavaScript object (data)
     console.log(data); //in console window we'll get temp,city name, etc in JSON format. & with the help of that we've to display that on the app
 
@@ -60,7 +59,7 @@ searchbtn.addEventListener('click', ()=>{ //Reads the value from the input box P
 // Enter key
 searchbox.addEventListener('keydown',(e)=>{
     if(e.key === 'Enter'){
-        //e.preventDefault();
+        e.preventDefault();
         checkweather(searchbox.value);
     }  
 })
